@@ -53,7 +53,7 @@
 		                      
 					<li class="nav-item">
 		             	<div class="dropdown">
-		             		<a class="nav-link" class="dropbtn">Sign In <span class="sr-only">(current)</span></a>
+		             		<a class="nav-link" class="dropbtn">Sign In <i class="fa fa-angle-down lnr"></i><span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
 		                		<a class="nav-link" href="member-login.jsp">Member Sign In</a>

@@ -19,6 +19,39 @@
     <link rel="stylesheet" href="assets/css/style-liberty.css">
   
   <link rel="stylesheet" href="assets/css/dropdown.css">
+  
+  
+ <style>
+ 
+
+ 
+#complaints {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+#complaints td, #complaints th {
+  border: 2px solid #212121;
+  text-color: black;
+  padding: 8px;
+}
+
+#complaints tr:nth-child(even){background-color: #fff3e0;}
+
+#complaints tr:hover {background-color: #ddd;}
+
+#complaints th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: left;
+  background-color: #ffab00;
+  color: black;
+}
+</style>
+  
 </head>
 <body>
 
@@ -62,11 +95,11 @@
 		                     
 		             <li class="nav-item">
 		             	<div class="dropdown">
-		             		<a class="nav-link" class="dropbtn">Complaint <span class="sr-only">(current)</span></a>
+		             		<a class="nav-link" class="dropbtn">Complaint <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
 		                		<a class="nav-link" href="member-register-complain.jsp">Register Complaint</a>
-		                		<a class="nav-link" href="#">View All Complaint</a>
+		                		<a class="nav-link" href="member-view-complaint.jsp">View Your Complaints</a>
 		              		</div>
 		            	</div>
 		            </li> 
@@ -74,25 +107,32 @@
 		            
 		            <li class="nav-item">
 		             	<div class="dropdown">
-		             		<a class="nav-link" class="dropbtn">Service <span class="sr-only">(current)</span></a>
+		             		<a class="nav-link" class="dropbtn">Service <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
 		                		<a class="nav-link" href="#">Book Hall</a>
-		                		<a class="nav-link" href="#">Society Meetings</a>
-		                		<a class="nav-link" href="#">Circular</a>
+		                		
+		                		<a class="nav-link" href="member-view-notice.jsp">Circular</a>
 		              		</div>
 		            	</div>
 		            </li> 
 		            
-		            		
-		           
 		            <li class="nav-item">
-		              <a class="nav-link" href="#">Make Payment</a>
-		            </li>
+		             	<div class="dropdown">
+		             		<a class="nav-link" class="dropbtn">Payment <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
+		              		<div class="dropdown-content" >
+		              				
+		                		<a class="nav-link" href="#">Maintenance</a>
+		                		<a class="nav-link" href="#">Payment History</a>
+		              		</div>
+		            	</div>
+		            </li> 		
+		           
+		            
 		           			
 		            <li class="nav-item">
 		             	<div class="dropdown">
-		             		<a class="nav-link" class="dropbtn">Event <span class="sr-only">(current)</span></a>
+		             		<a class="nav-link" class="dropbtn">Event <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
 		                		<a class="nav-link" href="#">Society Events</a>
@@ -103,7 +143,7 @@
 		                       
 		            <li class="nav-item">
 		             	<div class="dropdown">
-		             		<a class="nav-link" class="dropbtn"><%=m.getFname() %> <span class="sr-only">(current)</span></a>
+		             		<a class="nav-link" class="dropbtn"><%=m.getFname() %> <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
 		                		<a class="nav-link" href="member-profile.jsp">Profile</a>

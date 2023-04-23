@@ -51,8 +51,8 @@ public class Servicesss {
 		}		
 	}
 	public void sendMail(String emailid,int num){
-		final String username  = "toys1728@gmail.com";
-		final String password  = "lhjokusctvtmaetk";
+		final String username  = "toyshop1481@gmail.com";
+		final String password  = "udgtodnahdonbdol";
  
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
@@ -79,8 +79,8 @@ public class Servicesss {
 			System.out.println("3");
 			message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(emailid));//to mail address.
 			System.out.println("4");
-			message.setSubject("Hi This Is OPT Testing");
-			message.setText("Hello This Is OTP Testing Through Java. And Your OTp Is : "+num);
+			message.setSubject("OPT Verification");
+			message.setText("Hello This Is OTP Verification for password reset. Your OTP is : "+num);
 			System.out.println("5");
 			Transport.send(message);
 			System.out.println("Done");
@@ -89,4 +89,6 @@ public class Servicesss {
 			throw new RuntimeException(e);
 		}		
 	}
+	
+	
 }

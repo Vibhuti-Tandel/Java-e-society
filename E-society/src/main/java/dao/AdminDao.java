@@ -8,6 +8,7 @@ import java.util.List;
 
 import connection.DBConnection;
 import model.Admin;
+import model.Complaint;
 import model.Member;
 
 public class AdminDao {
@@ -167,6 +168,71 @@ public class AdminDao {
 			e.printStackTrace();
 		}
 		return list;
+	}
+	
+	public static List<Complaint> getAllRegisteredComplaints()
+	{
+		List<Complaint> list = new ArrayList<Complaint>();
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from complaint";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next())
+			{
+				Complaint c = new Complaint();
+				c.setCid(rs.getInt("cid"));
+				c.setMid(rs.getInt("mid"));
+				c.setH_no(rs.getInt("h_no"));
+				c.setSubject(rs.getString("subject"));
+				c.setCdate(rs.getString("cdate"));
+				c.setDescription(rs.getString("description"));
+				c.setComplaint_status(rs.getString("complaint_status"));
+				list.add(c);
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public static void adminSolvedComplaint(int cid)
+	{
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "update complaint set complaint_status='solved' where cid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, cid);
+			pst.executeUpdate();
+			System.out.println("Complaint Solved");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static String checkComplaintStatus(int cid)
+	{
+		String c_status="";
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from complaint where cid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, cid);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next())
+			{
+				c_status = rs.getString("complaint_status");		
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return c_status;
 	}
 
 }

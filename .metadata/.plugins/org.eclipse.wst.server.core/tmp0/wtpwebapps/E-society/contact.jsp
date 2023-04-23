@@ -58,14 +58,14 @@
 	                  <div class="col-lg-4 col-md-6">
 	                      <div class="contact-address">
 	                          <ul>
-	                              <li class="icon-color"><span class="fa fa-map-marker"></span> <span>E-Society, Ahmedabad - Gujarat</span> </li>
+	                              <li class="icon-color"><span class="fa fa-map-marker"></span> <span><a class="" href="https://goo.gl/maps/kPVopU6dPatQG59d6">E-Society, Ahmedabad - Gujarat</a> </li>
 	                          </ul>
 	                      </div>
 	                  </div>
 	                  <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
 	                      <div class="contact-address">
 	                          <ul>
-	                              <li class="icon-color"><span class="fa fa-phone"></span> <span><a class="" href="tel:+(21)-234-9999">Phone :8849455423</a>
+	                              <li class="icon-color"><span class="fa fa-phone"></span> <span><a class="" href="tel:+01 6355106115">Phone :6355106115</a>
 	                          </ul>
 	                      </div>
 	                  </div>

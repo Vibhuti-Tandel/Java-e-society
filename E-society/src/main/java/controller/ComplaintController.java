@@ -1,6 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.ComplaintDao;
 import model.Complaint;
+import model.ComplaintReply;
 
 /**
  * Servlet implementation class ComplaintController
@@ -56,6 +60,20 @@ public class ComplaintController extends HttpServlet {
 			ComplaintDao.registerComplaint(c);
 			request.setAttribute("msg", "Your complaint has been registered !!");
 			request.getRequestDispatcher("member-register-complain.jsp").forward(request, response);
+		}
+		else if(action.equalsIgnoreCase("adminReply"))
+		{
+			Date date = new Date();
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+			String rdate = formatter.format(date);
+			
+			ComplaintReply cr = new ComplaintReply();
+			cr.setCid(Integer.parseInt(request.getParameter("cid")));
+			cr.setC_reply(request.getParameter("c_reply"));
+			cr.setReply_date(rdate);
+			ComplaintDao.adminReplyComplaint(cr);
+			request.setAttribute("reply", "Your Reply has been Sent !!");
+			request.getRequestDispatcher("admin-reply-complaint.jsp").forward(request, response);
 		}
 	}
 
