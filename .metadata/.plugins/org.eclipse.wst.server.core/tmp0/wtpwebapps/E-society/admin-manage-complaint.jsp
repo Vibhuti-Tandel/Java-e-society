@@ -5,69 +5,83 @@
     pageEncoding="ISO-8859-1"%>
 <%@include file="admin-header.jsp" %>
 <!-- main content start-->
-		<div id="page-wrapper">
-			<div class="main-page">
-				<div class="tables">
-					<h2 class="title1">All Society Members Complaints</h2>
+
+<div id="page-wrapper">
+	<div class="main-page">
+		<div class="tables">
+			<h2 class="title1">Manage Society Members Complaints</h2>
+			
+			<form action="ComplaintController" method="post">
+			
+			<button type = "submit" class = "btn btn-danger" name="action" value="adminManageComplaint">Manage Complaints</button>
+			
+			<button type = "submit" class = "btn btn-primary" name="action" value="adminViewAllComplaints">All Complaints</button>
+		
+			<!-- Indicates a successful or positive action -->
+			<button type = "submit" class = "btn btn-success" name="action" value="adminViewSolvedComplaints">Solved Complaints</button>
+				
+			<!-- Indicates caution should be taken with this action -->
+			<button type = "submit" class = "btn btn-warning" name="action" value="adminViewPendingComplaints">Unsolved Complaints</button>
+		
+			<!-- Indicates a dangerous or potentially negative action -->
+			<!-- <button type = "button" class = "btn btn-danger" >Unsolved Complaints</button> -->
+			</form>				
+					
+				<div class="bs-example widget-shadow" data-example-id="contextual-table"> 
+					<h4>Manage Complaints:</h4>
 					
 					
 					
-					
-					<div class="bs-example widget-shadow" data-example-id="contextual-table"> 
-						<h4>Manage Complaints:</h4>
+					<table class="table"> 
+					<thead> 
+					<tr> 
+					<th>Complaint ID</th> 
+					<th>Member ID</th> 
+					<th>House No</th> 
+					<th>Complaint Subject</th>
+					<th>Date of Complaint</th>
+					<th>Complaint Description</th>
+					<th>Reply</th>
+					<th>Change status if solved</th>
+					<th>Status</th>
+					    
+					</tr> 
+					</thead> 
+					<tbody> 
+					<%List<Complaint> list = AdminDao.getAllRegisteredComplaints(); %>
+					<%for(Complaint c : list){ %>
+					<tr class="active"> 
+					<th scope="row"><%=c.getCid() %></th> 
+					<td><%=c.getMid() %></td> 
+					<td><%=c.getH_no() %></td> 
+					<td><%=c.getSubject() %></td>
+					<td><%=c.getCdate()  %></td>
+					<td><%=c.getDescription() %></td>
+						<%List<ComplaintReply> crlist = ComplaintDao.getAdminReplyByComplaintId(c.getCid()); %>
+						<%if(crlist.isEmpty()){ %>
+							<td><a href="admin-reply-complaint.jsp?cid=<%=c.getCid() %>">Reply</a></td>
+						<%}else{ %>
 						
+						<%for(ComplaintReply cr: crlist){ %>
 						
-						
-						<table class="table"> 
-						<thead> 
-						<tr> 
-						<th>Complaint ID</th> 
-						<th>Member ID</th> 
-						<th>House No</th> 
-						<th>Complaint Subject</th>
-						<th>Date of Complaint</th>
-						<th>Complaint Description</th>
-						<th>Reply</th>
-						<th>Change status if solved</th>
-						<th>Status</th>
-						    
-						</tr> 
-						</thead> 
-						<tbody> 
-						<%List<Complaint> list = AdminDao.getAllRegisteredComplaints(); %>
-						<%for(Complaint c : list){ %>
-						<tr class="active"> 
-						<th scope="row"><%=c.getCid() %></th> 
-						<td><%=c.getMid() %></td> 
-						<td><%=c.getH_no() %></td> 
-						<td><%=c.getSubject() %></td>
-						<td><%=c.getCdate()  %></td>
-						<td><%=c.getDescription() %></td>
-							<%List<ComplaintReply> crlist = ComplaintDao.getAdminReplyByComplaintId(c.getCid()); %>
-							<%if(crlist.isEmpty()){ %>
-								<td><a href="admin-reply-complaint.jsp?cid=<%=c.getCid() %>">Reply</a></td>
-							<%}else{ %>
-							
-							<%for(ComplaintReply cr: crlist){ %>
-							
-								<td>Replied : <%=cr.getC_reply() %> <br>On Date : <%=cr.getReply_date() %></td>
-							<%} %>
-							<%} %>
-							
-							<%String c_status = AdminDao.checkComplaintStatus(c.getCid()); %>
-							<%if(c_status.equals("solved")){ %>
-								<td>Complaint has been solved</td>
-							<%}else{ %>
-								<td><a href="admin-solve-complaint.jsp?cid=<%=c.getCid() %>">Solved</a></td>
-							<%} %>
-							
-						<td><%=c.getComplaint_status() %></td>
-						
-						</tr> 
+							<td>Replied : <%=cr.getC_reply() %> <br>On Date : <%=cr.getReply_date() %></td>
 						<%} %>
-						</tbody> 
-						</table> 
-					</div>
+						<%} %>
+						
+						<%String c_status = AdminDao.checkComplaintStatus(c.getCid()); %>
+						<%if(c_status.equals("solved")){ %>
+							<td>Complaint has been solved</td>
+						<%}else{ %>
+							<td><a href="admin-solve-complaint.jsp?cid=<%=c.getCid() %>">Solved</a></td>
+						<%} %>
+						
+					<td><%=c.getComplaint_status() %></td>
+					
+					</tr> 
+					<%} %>
+					</tbody> 
+					</table> 
+				</div>
 					
 				</div>
 			</div>

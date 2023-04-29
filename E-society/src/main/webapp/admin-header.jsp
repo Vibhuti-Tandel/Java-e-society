@@ -146,39 +146,41 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
               </li>
 			  <li class="treeview">
                 <a href="admin-view-all-members.jsp">
-                <i class="fa fa-pie-chart"></i>
+                <i class="fa fa-users"></i>
                 <span>Society Members</span>
                 
                 </a>
               </li>
               <li class="treeview">
                 <a href="admin-approve-registration-request.jsp">
-                <i class="fa fa-pie-chart"></i>
-                <span>Approve Registration Request</span>
+                <i class="fa fa-check-square-o"></i>
+                <span>Approve Request</span>
                 </a>
               </li>
               <li class="treeview">
                 <a href="admin-manage-complaint.jsp">
                 <i class="fa fa-pie-chart"></i>
-                <span>View/Manage Complaint</span>
+                <span>Manage Complaint</span>
                 </a>
               </li>
               <li class="treeview">
-                <a href="admin-add-notice.jsp">
-                <i class="fa fa-check-square-o"></i>
-                <span>Add Notice/Circular</span>
+                <a href="admin-view-all-notice.jsp">
+                <i class="fa fa-file-text-o"></i>
+                <span>Manage Society Circular</span>
                 </a>
               </li>
+
+               
                <li class="treeview">
-                <a href="admin-view-all-notice.jsp">
-                <i class="fa fa-check-square-o"></i>
-                <span>All Notice/Circular</span>
+                <a href="admin-view-hall-booking.jsp">
+                <i class="fa fa-calendar-o"></i>
+                <span>Hall Booking</span>
                 </a>
               </li>
               <li class="treeview">
               <li class="treeview">
                 <a href="#">
-                <i class="fa fa-laptop"></i>
+                <i class="fa fa-money"></i>
 				<span>Payment</span>
                 </a>
               </li>

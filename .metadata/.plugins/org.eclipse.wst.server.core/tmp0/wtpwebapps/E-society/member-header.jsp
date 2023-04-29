@@ -98,7 +98,7 @@
 		             		<a class="nav-link" class="dropbtn">Complaint <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
-		                		<a class="nav-link" href="member-register-complain.jsp">Register Complaint</a>
+		                		<a class="nav-link" href="member-register-complaint.jsp">Register Complaint</a>
 		                		<a class="nav-link" href="member-view-complaint.jsp">View Your Complaints</a>
 		              		</div>
 		            	</div>
@@ -110,7 +110,8 @@
 		             		<a class="nav-link" class="dropbtn">Service <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
-		                		<a class="nav-link" href="#">Book Hall</a>
+		                		<a class="nav-link" href="member-book-hall.jsp">Book Hall</a>
+		                		<a class="nav-link" href="member-hall-booking-list.jsp">Manage Hall Booking</a>
 		                		
 		                		<a class="nav-link" href="member-view-notice.jsp">Circular</a>
 		              		</div>
