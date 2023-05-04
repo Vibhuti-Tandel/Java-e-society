@@ -57,7 +57,7 @@ public class ComplaintController extends HttpServlet {
 			c.setComplaint_status("applied");
 			ComplaintDao.registerComplaint(c);
 			request.setAttribute("msg", "Your complaint has been registered !!");
-			request.getRequestDispatcher("member-register-complait.jsp").forward(request, response);
+			request.getRequestDispatcher("member-register-complaint.jsp").forward(request, response);
 		}
 		else if(action.equalsIgnoreCase("adminReply"))
 		{

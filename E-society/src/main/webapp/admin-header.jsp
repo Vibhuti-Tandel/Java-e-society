@@ -177,6 +177,14 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <span>Hall Booking</span>
                 </a>
               </li>
+              
+              <li class="treeview">
+                <a href="admin-view-all-event.jsp">
+                <i class="fa fa-calendar-o"></i>
+                <span>Society Event</span>
+                </a>
+              </li>
+              
               <li class="treeview">
               <li class="treeview">
                 <a href="#">

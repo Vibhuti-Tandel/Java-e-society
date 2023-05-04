@@ -136,7 +136,7 @@
 		             		<a class="nav-link" class="dropbtn">Event <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
-		                		<a class="nav-link" href="#">Society Events</a>
+		                		<a class="nav-link" href="member-view-all-event.jsp">Society Events</a>
 		                		<a class="nav-link" href="#">Gallery</a>
 		              		</div>
 		            	</div>

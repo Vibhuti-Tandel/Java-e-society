@@ -18,7 +18,7 @@
 <div id="page-wrapper">
 	<div class="main-page general">
 		<h2 class="title1">All Notices</h2>
-		<div style="margin-left:1120px;"><a href="admin-add-notice.jsp"><button type="button" class="btn btn-info btn-flat btn-pri" ><i class="fa fa-plus" aria-hidden="true"></i>Notice</button></a></div>
+		<div style="margin-left:850px;"><a href="admin-add-notice.jsp"><button type="button" class="btn btn-info btn-flat btn-pri" ><i class="fa fa-plus" aria-hidden="true"></i>Notice</button></a></div>
 		
 		<%if(list.isEmpty()){ %>
 			<h2 style="color: gray";><center>No Notice Available!!</center></h2>
