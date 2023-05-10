@@ -22,6 +22,17 @@
 </head>
 <body>
 
+<%
+  response.setHeader("Cache-Control","no-cache");
+  response.setHeader("Cache-Control","no-store");
+  response.setHeader("Pragma","no-cache");
+  response.setDateHeader ("Expires", 0);
+  if(session.getAttribute("memberData")==null && session.getAttribute("memberData")==null)
+      response.sendRedirect("index.jsp");
+%>
+
+
+
 
 		<!--header-->
 		  <header id="site-header" class="fixed-top">

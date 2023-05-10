@@ -40,10 +40,11 @@
    <div class="contact-form py-5" id="contact">
    		<div class="container py-lg-5 py-md-4">
    			<h3 class="hny-title mb-lg-5 mb-4">Your Hall Booking List</h3>
+   			
    			<%for(HallBook b: list){ %>
    			<div style="height:auto; width:1250px; ">
    					<h3 style="font-size: 18px;line-height:26px;">
-   					<form action="#" method="post" class="subscribe-wthree pt-lg-3 mt-4">
+   					<form action="memeber-pay-hall-rent.jsp?amount=2000&bid=<%=b.getBid() %>" method="post" class="subscribe-wthree pt-lg-3 mt-4">
                 		<div class="flex-wrap subscribe-wthree-field">
                 		<input type="hidden" name="mid" value="<%=b.getMid() %>">
                 		<input type="hidden" name="bid" value="<%=b.getBid() %>">
@@ -53,16 +54,31 @@
 	                  		
 	   						Date: <span style="color: var(--secondary-color);font-size: 18px;">
 	   						<input type="date" name="b_date" value="<%=b.getB_date() %>" ></span><br>
-	   						<br>
+	   						
+                 			<br>
+                 			
+                 			<%String status = HallBookDao.checkHallPaymentStatus(b.getBid()); %>
+                 			<%if(status.equals("pending")){ %>
+                 			
+                 			 <button class="btn btn-style btn-primary btn-contact" type="submit" name="action" value="HallPayment">Pay Hall Rent</button>
+                 			<%}else{ %>
+                 			<h5 style="color:#ffab00">Your hall booking payment has been done !!</h5>
+                 			<br>
+                 			
+                 			<% }%>
+                 			
                  			<a href="member-edit-booking-detail.jsp?bid=<%=b.getBid() %>"><button class="btn btn-style btn-primary" type="button" name="action">Edit Booking Detail</button></a>
                  			<a href="member-delete-hall-booking.jsp?bid=<%=b.getBid() %>"><button class="btn btn-style btn-primary" type="button" name="action">Delete Hall Booking</button></a>
+                 			<br>
+                 			
+                 			
                			 </div>
              		</form>
-             		
+             		<hr style="border-bottom: 2px solid var(--secondary-color);width:600px;margin-left:0px;">
    				</h3>
    			</div>
    			<%} %>
-   			<hr style="border-bottom: 2px solid var(--secondary-color);width:500px;margin-left:0px;">
+   			
     	</div>
     </div>
   <!--//grids-->

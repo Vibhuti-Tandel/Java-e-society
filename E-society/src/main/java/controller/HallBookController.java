@@ -45,6 +45,7 @@ public class HallBookController extends HttpServlet {
 			b.setMid(Integer.parseInt(request.getParameter("mid")));
 			b.setB_subject(request.getParameter("b_subject"));
 			b.setB_date(request.getParameter("b_date"));
+			b.setBpayment_status("pending");
 			
 			String bdate = request.getParameter("b_date");
 			boolean flag = HallBookDao.checkHallBookingDate(bdate);
@@ -62,7 +63,7 @@ public class HallBookController extends HttpServlet {
 			}
 			
 		}
-		if(action.equalsIgnoreCase("editBookHallDetail")) {
+		else if(action.equalsIgnoreCase("editBookHallDetail")) {
 			HallBook b = new HallBook();
 			b.setBid(Integer.parseInt(request.getParameter("bid")));
 			b.setMid(Integer.parseInt(request.getParameter("mid")));
@@ -70,6 +71,19 @@ public class HallBookController extends HttpServlet {
 			b.setB_date(request.getParameter("b_date"));
 			HallBookDao.updateBookHallDetail(b);
 			response.sendRedirect("member-hall-booking-list.jsp");
+		}
+		else if(action.equalsIgnoreCase("adminViewAllHAllPayment"))
+		{
+			response.sendRedirect("admin-view-hall-payment.jsp");
+		}
+		else if(action.equalsIgnoreCase("adminViewAllMaintenancePayment"))
+		{
+			response.sendRedirect("admin-view-maintenance-payment.jsp");
+		}
+		else if(action.equalsIgnoreCase("AdminViewMPaymentByMid"))
+		{
+			int mid = Integer.parseInt(request.getParameter("mid"));
+			response.sendRedirect("admin-view-mpayment-by-mid.jsp?mid="+mid);
 		}
 	}
 

@@ -286,6 +286,7 @@ public class AdminDao {
 				b.setMid(rs.getInt("mid"));
 				b.setB_subject(rs.getString("b_subject"));
 				b.setB_date(rs.getString("b_date"));
+				b.setBpayment_status(rs.getString("bpayment_status"));
 				list.add(b);
 				System.out.println("Admin Book Hall List Fetched Dao");
 			}
@@ -346,11 +347,12 @@ public class AdminDao {
 	public static void adminBookHall(HallBook b) {
 		try {
 			Connection conn = DBConnection.createConnection();
-			String sql = "insert into bookhall(mid,b_subject,b_date) values(?,?,?)";
+			String sql = "insert into bookhall(mid,b_subject,b_date,bpayment_status) values(?,?,?,?)";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setInt(1, b.getMid());
 			pst.setString(2, b.getB_subject());
 			pst.setString(3, b.getB_date());
+			pst.setString(4, b.getBpayment_status());
 			pst.executeUpdate();
 			System.out.println("Admin Hall Booked!! Dao");
 		}catch(Exception e) {
@@ -370,6 +372,7 @@ public class AdminDao {
 				b.setMid(rs.getInt("mid"));
 				b.setB_subject(rs.getString("b_subject"));
 				b.setB_date(rs.getString("b_date"));
+				b.setBpayment_status(rs.getString("bpayment_status"));
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

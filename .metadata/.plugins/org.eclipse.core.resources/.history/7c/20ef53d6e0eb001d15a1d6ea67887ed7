@@ -1,0 +1,33 @@
+<%@page import="dao.MPaymentDao"%>
+<%@page import="model.Maintenance"%>
+<%@page import="model.Member"%>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@include file="admin-header.jsp" %>
+<!-- main content start-->
+<div id="page-wrapper">
+			<div class="main-page">
+				<div class="forms">
+					
+					
+					<div class="inline-form widget-shadow">
+						
+						<div class="form-body">
+							<div data-example-id="simple-form-inline"> 
+							<form class="form-inline"> 
+								<div class="form-group"> 
+									<input type="text" class="form-control" id="exampleInputEmail3" name="mid"  placeholder="Enter Member ID"> 
+								</div> 
+								<button type="submit" class="btn btn-default">View Maintenance Payment</button> 
+							</form> 
+							</div>
+						</div>
+					</div>
+					
+					
+					
+				</div>
+			</div>
+		</div>
+

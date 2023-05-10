@@ -56,6 +56,16 @@
 <body>
 
 <%
+  response.setHeader("Cache-Control","no-cache");
+  response.setHeader("Cache-Control","no-store");
+  response.setHeader("Pragma","no-cache");
+  response.setDateHeader ("Expires", 0);
+  if(session.getAttribute("memberData")==null)
+      response.sendRedirect("index.jsp");
+%>
+
+
+<%
 	Member m = null;
 	if(session.getAttribute("memberData") != null)
 	{
@@ -123,8 +133,8 @@
 		             		<a class="nav-link" class="dropbtn">Payment <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
-		                		<a class="nav-link" href="#">Maintenance</a>
-		                		<a class="nav-link" href="#">Payment History</a>
+		                		<a class="nav-link" href="member-pay-maintenance.jsp">Maintenance</a>
+		                		<a class="nav-link" href="member-view-mpayment-history.jsp">Payment History</a>
 		              		</div>
 		            	</div>
 		            </li> 		
@@ -137,7 +147,7 @@
 		              		<div class="dropdown-content" >
 		              				
 		                		<a class="nav-link" href="member-view-all-event.jsp">Society Events</a>
-		                		<a class="nav-link" href="#">Gallery</a>
+		                		
 		              		</div>
 		            	</div>
 		            </li> 

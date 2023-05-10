@@ -2,7 +2,7 @@ package model;
 
 public class HallBook {
 	private int mid, bid;
-	private String b_subject, b_date;
+	private String b_subject, b_date,bpayment_status;
 	public int getMid() {
 		return mid;
 	}
@@ -28,10 +28,19 @@ public class HallBook {
 	public void setB_date(String b_date) {
 		this.b_date = b_date;
 	}
+	
+	public String getBpayment_status() {
+		return bpayment_status;
+	}
+	public void setBpayment_status(String bpayment_status) {
+		this.bpayment_status = bpayment_status;
+	}
 	@Override
 	public String toString() {
-		return "HallBook [mid=" + mid + ", bid=" + bid + ", b_subject=" + b_subject + ", b_date=" + b_date + "]";
+		return "HallBook [mid=" + mid + ", bid=" + bid + ", b_subject=" + b_subject + ", b_date=" + b_date
+				+ ", bpayment_status=" + bpayment_status + "]";
 	}
+	
 	
 	
 	

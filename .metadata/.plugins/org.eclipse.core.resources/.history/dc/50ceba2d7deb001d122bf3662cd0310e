@@ -1,0 +1,15 @@
+package dao;
+
+import model.Maintenance;
+
+public class MPaymentDao {
+
+	public static void insertMaintenancePayment(Maintenance m)
+	{
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
